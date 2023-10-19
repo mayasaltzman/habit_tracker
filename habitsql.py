@@ -38,13 +38,13 @@ class Database:
         
     
     #set items
-    def __setitem__(self, table, values):
-      temp = len(values)
-      str = "(" + ",".join(["?"]*temp) + ")"
-      query = f"INSERT INTO {table} VALUES {str}"
-      cursor = self.conn.cursor()
-      cursor.execute(query,values)
-      self.conn.commit()
+    # def __setitem__(self, table, values):
+    #   temp = len(values)
+    #   str = "(" + ",".join(["?"]*temp) + ")"
+    #   query = f"INSERT INTO {table} VALUES {str}"
+    #   cursor = self.conn.cursor()
+    #   cursor.execute(query,values)
+    #   self.conn.commit()
     
     #add habits
     def add_habit(self, name, frequency, streak):
@@ -53,7 +53,7 @@ class Database:
         params = (name,frequency,streak) 
         cursor.execute(query,params)
       
-        id = cursor.execute("""SELECT last_insert_rowid();""").fetchone() #getting id
+        # id = cursor.execute("""SELECT last_insert_rowid();""").fetchone() #getting id
         print(cursor.execute("SELECT * FROM Habits").fetchall())
     
     # add category
@@ -63,7 +63,7 @@ class Database:
         params = (name,) 
         cursor.execute(query,params)
       
-        id = cursor.execute("""SELECT last_insert_rowid();""").fetchone() #getting id
+        # id = cursor.execute("""SELECT last_insert_rowid();""").fetchone() #getting id
         print(cursor.execute("SELECT * FROM Categories").fetchall())
     
     
