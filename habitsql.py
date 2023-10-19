@@ -46,22 +46,22 @@ class Database:
     #   cursor.execute(query,values)
     #   self.conn.commit()
     
-    #add habits
+    #add habits to table
     def add_habit(self, name, frequency, streak):
         cursor = self.conn.cursor()
-        query = "INSERT INTO Habits (HABIT,FREQUENCY,STREAK) VALUES (?,?,?)"  
-        params = (name,frequency,streak) 
-        cursor.execute(query,params)
+        query = "INSERT INTO Habits (HABIT,FREQUENCY,STREAK) VALUES (?,?,?)"  #query to insert
+        params = (name,frequency,streak) #params from function def
+        cursor.execute(query,params) #execute query
       
         # id = cursor.execute("""SELECT last_insert_rowid();""").fetchone() #getting id
         print(cursor.execute("SELECT * FROM Habits").fetchall())
     
-    # add category
+    # add category to table
     def add_category(self, name):
         cursor = self.conn.cursor()
-        query = "INSERT INTO Categories (CATEGORY_NAME) VALUES (?)"  
-        params = (name,) 
-        cursor.execute(query,params)
+        query = "INSERT INTO Categories (CATEGORY_NAME) VALUES (?)"  #query to insert
+        params = (name,) #params from function def
+        cursor.execute(query,params) #execute query
       
         # id = cursor.execute("""SELECT last_insert_rowid();""").fetchone() #getting id
         print(cursor.execute("SELECT * FROM Categories").fetchall())
