@@ -47,11 +47,21 @@ class Database:
       self.conn.commit()
     
     #add habits
-    def add_habit(self, name, category, frequency):
+    def add_habit(self, name, category, frequency, streak):
         cursor = self.conn.cursor()
+        query = "INSERT INTO Habits (HABIT,CATEGORY,FREQUENCY,STREAK) VALUES (?,?,?,?)"  
+        params = (name,category,frequency,streak) 
+        cursor.execute(query,params)
+      
+        id = cursor.execute("""SELECT last_insert_rowid();""").fetchone() #getting id
+        print(cursor.execute("SELECT * FROM Habits").fetchall())
         
     
     #get habits
     
-    def main(self):
-        self.create_tables()
+    
+if __name__ == "__main__":
+    db = Database()
+    db.create_tables()
+    db.add_habit("Read","Learning","Daily",0)
+    
