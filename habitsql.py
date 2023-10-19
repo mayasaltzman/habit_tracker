@@ -35,11 +35,23 @@ class Database:
                  ( ID     INTEGER NOT NULL,
                    CATEGORY_NAME VARCHAR,
                    PRIMARY KEY (ID) );""" )
+        
     
     #set items
+    def __setitem__(self, table, values):
+      temp = len(values)
+      str = "(" + ",".join(["?"]*temp) + ")"
+      query = f"INSERT INTO {table} VALUES {str}"
+      cursor = self.conn.cursor()
+      cursor.execute(query,values)
+      self.conn.commit()
     
     #add habits
+    def add_habit(self, name, category, frequency):
+        cursor = self.conn.cursor()
+        
     
     #get habits
     
-    # def main():
+    def main(self):
+        self.create_tables()
