@@ -52,9 +52,12 @@ class Database:
         query = "INSERT INTO Habits (HABIT,FREQUENCY,STREAK) VALUES (?,?,?)"  #query to insert
         params = (name,frequency,streak) #params from function def
         cursor.execute(query,params) #execute query
-      
+        # cursor.execute("COMMIT")#don't know if I need this
+        
+        
         # id = cursor.execute("""SELECT last_insert_rowid();""").fetchone() #getting id
         print(cursor.execute("SELECT * FROM Habits").fetchall())
+        
     
     # add category to table
     def add_category(self, name):
@@ -62,6 +65,7 @@ class Database:
         query = "INSERT INTO Categories (CATEGORY_NAME) VALUES (?)"  #query to insert
         params = (name,) #params from function def
         cursor.execute(query,params) #execute query
+        # cursor.execute("COMMIT") don't know if I need this
       
         # id = cursor.execute("""SELECT last_insert_rowid();""").fetchone() #getting id
         print(cursor.execute("SELECT * FROM Categories").fetchall())
