@@ -1,5 +1,5 @@
 # habit_tracker
-Python Habit Tracker
+Python and React Habit Tracker
 
 functionality
 add habit
