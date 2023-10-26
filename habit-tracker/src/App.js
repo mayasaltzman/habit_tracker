@@ -17,7 +17,6 @@ function App() {
         <Route path="/habits" element={<Habits />} />
         <Route path="/statistics" element={<Statistics />} />
       </Routes>
-      <Home />
     </div>
   );
 }
