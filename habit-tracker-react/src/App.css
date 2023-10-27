@@ -1,12 +1,17 @@
 .App {
   background-color: white;
-  height: 100%;
+  height: 100vh;
   width: 100%;
   font-family: sans-serif;
+  background-image: url("./home-imgs/british-columbia.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
 }
 
 /* so nav bar touches top */
-body{
+body {
   margin: 0;
   padding: 0;
 }
