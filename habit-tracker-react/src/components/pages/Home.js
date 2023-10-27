@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import moment from 'moment'
 import Calendar from 'react-calendar'
+import 'react-calendar/dist/Calendar.css';
+import './Home.css';
 
 const Home = () => {
     const [date, setDate] = useState(new Date()) //used to set date for calender
@@ -24,18 +26,19 @@ const Home = () => {
     const time = moment().format('h:mm a')
 
     return (
-        <div className='welcome'>
+        <div className='landing'>
             {/* extracts time and returns as string */}
             {/* <p>{String(hours - 12).padStart(2, '0')}:{String(minutes).padStart(2, '0')}</p> */}
             {/* extracts datw and returns as string */}
             {/* <p>{date.toLocaleDateString()}</p> */}
-            <h1>Welcome</h1>
-            <p>{curr}</p>
-            <p>{time}</p>
+            <h1>{curr}</h1>
+            <h2>{time}</h2>
 
+            {/* calendar section */}
             <div className='calendar-container'>
                 <Calendar onChange={setDate} value={date} />
             </div>
+
         </div>
     )
 }
