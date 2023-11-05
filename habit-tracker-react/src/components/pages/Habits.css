@@ -1,0 +1,36 @@
+h1{
+    /* padding-top: 8.0rem; */
+    display: flex;
+    justify-content: left;
+    /* letter-spacing: 0.2rem; */
+    font-size: 3.0rem;
+    /* color: white; */
+    /* text-transform: uppercase; */
+    /* font-weight: bold; */
+    text-align: left;
+}
+
+#add-habit h2{
+    display: flex;
+    justify-content: left;
+    font-size: 2.0rem;
+    text-align: left;
+}
+
+#habit-form{
+    display: block;
+    justify-content: left;
+
+}
+
+#form-wrapper{
+    display: block;
+    justify-content: left;
+}
+
+
+#form-wrapper .form-content{
+    display: block;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
