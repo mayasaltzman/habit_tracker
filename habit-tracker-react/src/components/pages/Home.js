@@ -22,7 +22,7 @@ const Home = () => {
     // const minutes = date.getMinutes()
 
     //moment library just does this for me lol
-    const curr = moment().format('MMMM Do YYYY')
+    const curr = moment().format('MMMM D, YYYY')
     const time = moment().format('h:mm a')
 
     return (

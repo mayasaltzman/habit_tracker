@@ -6,8 +6,9 @@
     letter-spacing: 0.2rem;
     font-size: 4.0rem;
     color: white;
-    text-tracdnsform: uppercase;
-    font-weight: bold;
+    text-transform: uppercase;
+    /* font-weight: bold; */
+    text-align: center;
 }
 
 .landing h2 {
@@ -17,7 +18,7 @@
     font-size: 3.0rem;
     color: white;
     text-transform: uppercase;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 .calendar-container {
@@ -61,7 +62,7 @@
 }
 
 .react-calendar__tile--now {
-    background: #0f172a;
+    background: rgba(255, 255, 255, 0.474);
     border-radius: 6px;
     font-weight: bold;
     color: white;
@@ -75,3 +76,9 @@
     color: white;;
 }
 
+/* making weekend dates black */
+.react-calendar__month-view__days__day--weekend:not(
+    .react-calendar__month-view__days__day--neighboringMonth
+  ) {
+  color: #0f172a !important;
+}
