@@ -1,4 +1,13 @@
 /* this page only looks good on full screen LOL */
+
+.landing {
+    background-image: url("./home-imgs/british-columbia.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
 .landing h1 {
     padding-top: 8.0rem;
     display: flex;
@@ -73,12 +82,11 @@
     background: #1d4ed8;
     border-radius: 6px;
     font-weight: bold;
-    color: white;;
+    color: white;
+    ;
 }
 
 /* making weekend dates black */
-.react-calendar__month-view__days__day--weekend:not(
-    .react-calendar__month-view__days__day--neighboringMonth
-  ) {
-  color: #0f172a !important;
+.react-calendar__month-view__days__day--weekend:not(.react-calendar__month-view__days__day--neighboringMonth) {
+    color: #0f172a !important;
 }

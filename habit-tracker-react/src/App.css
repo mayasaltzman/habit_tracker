@@ -3,11 +3,6 @@
   height: 100vh;
   width: 100%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-image: url("./home-imgs/british-columbia.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-
 }
 
 /* so nav bar touches top */
