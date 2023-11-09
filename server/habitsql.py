@@ -1,5 +1,8 @@
 import os
 import sqlite3
+from flask import Flask, request, jsonify
+
+app = Flask(__name__)
 
 class Database:
     
@@ -56,7 +59,7 @@ class Database:
         
         
         # id = cursor.execute("""SELECT last_insert_rowid();""").fetchone() #getting id
-        print(cursor.execute("SELECT * FROM Habits").fetchall())
+        
         
     
     # add category to table
@@ -70,11 +73,20 @@ class Database:
         # id = cursor.execute("""SELECT last_insert_rowid();""").fetchone() #getting id
         print(cursor.execute("SELECT * FROM Categories").fetchall())
     
+    @app.route('/api/data', methods=['GET'])
+    def get_data(self):
+        cursor = self.conn.cursor()
+        # Retrieve data from the database
+        cursor.execute('SELECT * FROM Habits')
+        data = cursor.fetchall()
+        return jsonify(data)
+        
+    
     
 if __name__ == "__main__":
-    db = Database()
-    db.create_tables()
-    db.add_habit("Read","Daily",0)
-    db.add_category("Learning")
-    db.add_category("Tech")
-    
+    # db = Database()
+    # db.create_tables()
+    # db.add_habit("Read","Daily",0)
+    # db.add_category("Learning")
+    # db.add_category("Tech")
+    app.run(debug=True)
